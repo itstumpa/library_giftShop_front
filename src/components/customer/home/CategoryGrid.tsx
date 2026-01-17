@@ -44,7 +44,7 @@ export function CategoryGrid() {
               <Card className="overflow-hidden transition-all hover:shadow-card">
                 <CardContent className="p-0">
                   {/* Icon/Image Area */}
-                  <div className="relative aspect-square overflow-hidden bg-gradient-to-br from-primary/5 to-accent/5">
+                  <div className="relative aspect-square overflow-hidden bg-linear-to-br from-primary/5 to-accent/5">
                     <div className="flex h-full items-center justify-center">
                       <Icon className="h-24 w-24 text-primary/40 transition-transform group-hover:scale-110" />
                     </div>

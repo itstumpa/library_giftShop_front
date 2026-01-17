@@ -52,7 +52,7 @@ export function ProductCard({ product }: ProductCardProps) {
       <Card className="group overflow-hidden transition-all hover:shadow-card">
         <CardContent className="p-0">
           {/* Image */}
-          <div className="relative aspect-[3/4] overflow-hidden bg-gradient-to-br from-primary/5 to-accent/5">
+          <div className="relative aspect-3/4 overflow-hidden bg-linear-to-br from-primary/5 to-accent/5">
             {/* Placeholder - Replace with actual Image component when you have images */}
             <div className="flex h-full items-center justify-center">
               <span className="text-6xl text-muted-foreground/20">📚</span>

@@ -6,7 +6,7 @@ import { Mail } from 'lucide-react';
 export function CTASection() {
   return (
     <section className="container mx-auto px-4 py-16">
-      <div className="overflow-hidden rounded-2xl bg-gradient-to-br from-primary to-secondary p-12 text-center shadow-elevated md:p-16">
+      <div className="overflow-hidden rounded-2xl bg-linear-to-br from-primary to-secondary p-12 text-center shadow-elevated md:p-16">
         <h2 className="font-serif text-3xl font-bold text-white md:text-4xl">
           Join Our Reading Community
         </h2>
