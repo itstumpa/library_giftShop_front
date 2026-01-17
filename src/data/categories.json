@@ -1,0 +1,32 @@
+[
+  {
+    "id": "cat_books",
+    "name": "Classic Literature",
+    "slug": "classic-literature",
+    "description": "Timeless classics from renowned authors",
+    "image": "/images/categories/books.jpg",
+    "productCount": 156,
+    "isActive": true,
+    "createdAt": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "cat_stationery",
+    "name": "Notebooks",
+    "slug": "notebooks",
+    "description": "Premium notebooks and journals",
+    "image": "/images/categories/notebooks.jpg",
+    "productCount": 89,
+    "isActive": true,
+    "createdAt": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "cat_pens",
+    "name": "Writing Instruments",
+    "slug": "writing-instruments",
+    "description": "Quality pens, pencils, and markers",
+    "image": "/images/categories/pens.jpg",
+    "productCount": 124,
+    "isActive": true,
+    "createdAt": "2024-01-01T00:00:00Z"
+  }
+]
