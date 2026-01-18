@@ -1,7 +1,7 @@
 'use client';
 
-import { StatsCard } from '@/components/dashboard/overview/StatsCard';
-import { RecentOrders } from '@/components/dashboard/overview/RecentOrders';
+// import { StatsCard } from '@/components/dashboard/overview/StatsCard';
+// import { RecentOrders } from '@/components/dashboard/overview/RecentOrders';
 import { Package, ShoppingCart, DollarSign, TrendingUp } from 'lucide-react';
 
 export default function DashboardPage() {
@@ -44,19 +44,19 @@ export default function DashboardPage() {
           Dashboard
         </h1>
         <p className="text-foreground-muted">
-          Welcome back! Here's what's happening with your store.
+          Welcome back! Here&apos;s what&apos;s happening with your store.
         </p>
       </div>
 
       {/* Stats Grid */}
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+      {/* <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         {stats.map((stat) => (
           <StatsCard key={stat.title} {...stat} />
         ))}
-      </div>
+      </div> */}
 
       {/* Recent Orders */}
-      <RecentOrders />
+      {/* <RecentOrders /> */}
     </div>
   );
 }

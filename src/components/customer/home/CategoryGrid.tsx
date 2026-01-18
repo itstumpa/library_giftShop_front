@@ -30,7 +30,7 @@ export function CategoryGrid() {
       </div>
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {displayCategories.map((category, index) => {
+        {displayCategories.map((category) => {
           const Icon =
             categoryIcons[category.slug as keyof typeof categoryIcons] ||
             BookOpen;

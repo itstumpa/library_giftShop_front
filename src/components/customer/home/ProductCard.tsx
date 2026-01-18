@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
+// import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -10,7 +10,7 @@ import { formatPrice } from '@/lib/utils';
 import { useAppDispatch } from '@/store/hooks';
 import { addToCart } from '@/store/features/cart/cartSlice';
 import { ShoppingCart, Star } from 'lucide-react';
-import { toast } from 'sonner';
+// import { toast } from 'sonner';
 
 interface ProductCardProps {
   product: Product;

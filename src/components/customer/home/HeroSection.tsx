@@ -1,72 +1,209 @@
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { ArrowRight, BookOpen } from 'lucide-react';
+// import { Link } from 'react-router-dom';
 
-export function HeroSection() {
+import { motion } from 'framer-motion';
+import { ArrowRight, BookOpen, Pencil, Truck, Shield } from 'lucide-react';
+import { CustomerLayout } from '@/components/layout/CustomerLayout';
+import { ProductCard } from '@/components/shared/ProductCard';
+import { CategoryCard } from '@/components/shared/CategoryCard';
+import { Button } from '@/components/ui/button';
+import { useProductStore } from '@/store/product-store';
+import Link from 'next/link';
+
+const features = [
+  {
+    icon: Truck,
+    title: 'Free Shipping',
+    description: 'On orders over $50',
+  },
+  {
+    icon: Shield,
+    title: 'Secure Payment',
+    description: '100% protected transactions',
+  },
+  {
+    icon: BookOpen,
+    title: 'Quality Selection',
+    description: 'Curated collection of books',
+  },
+  {
+    icon: Pencil,
+    title: 'Premium Stationery',
+    description: 'Finest writing instruments',
+  },
+];
+
+export default function HeroSection() {
+  const { getFeaturedProducts, getBestsellers, categories } = useProductStore();
+  const featuredProducts = getFeaturedProducts().slice(0, 4);
+  const bestsellers = getBestsellers().slice(0, 4);
+
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-accent/5">
-      <div className="container mx-auto px-4 py-20 md:py-32">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
-          {/* Content */}
-          <div className="space-y-8">
-            <div className="inline-flex items-center rounded-full bg-accent/10 px-4 py-2 text-sm font-medium text-accent-foreground">
-              <BookOpen className="mr-2 h-4 w-4" />
-              New Arrivals Available Now
-            </div>
-            
-            <h1 className="font-serif text-5xl font-bold leading-tight text-foreground md:text-6xl lg:text-7xl">
-              Discover Your Next
-              <span className="block text-primary">Great Read</span>
-            </h1>
-            
-            <p className="text-lg text-muted-foreground md:text-xl">
-              Explore our curated collection of premium books and stationery.
-              From timeless classics to contemporary bestsellers, find everything
-              you need to fuel your passion for learning.
-            </p>
-            
-            <div className="flex flex-col gap-4 sm:flex-row">
-              <Button asChild size="lg" className="group">
+    <CustomerLayout>
+      {/* Hero Section */}
+      <section className="relative overflow-hidden bg-primary text-primary-foreground">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=1920')] bg-cover bg-center opacity-10" />
+        <div className="page-container relative max-w-7xl mx-auto ">
+          <div className="py-20 md:py-32 lg:py-40 max-w-2xl">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6"
+            >
+              Discover Stories That{' '}
+              <span className="text-accent">Inspire</span>
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-lg md:text-xl text-primary-foreground/80 mb-8 leading-relaxed"
+            >
+              Explore our curated collection of books and premium stationery. 
+              From bestselling novels to artisan journals, find everything you need 
+              to feed your imagination.
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="flex flex-col sm:flex-row gap-4"
+            >
+              <Button size="lg" variant="secondary" asChild>
                 <Link href="/products">
                   Shop Now
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline">
-                <Link href="/products?filter=new">Browse New Arrivals</Link>
+              <Button size="lg" variant="outline" className="bg-primary-foreground/10 text-primary-foreground hover:bg-primary-foreground/20" asChild>
+                <Link href="/products?category=fiction">Browse Books</Link>
               </Button>
-            </div>
-
-            {/* Stats */}
-            <div className="flex gap-8 border-t pt-8">
-              <div>
-                <div className="font-serif text-3xl font-bold text-primary">10k+</div>
-                <div className="text-sm text-muted-foreground">Books Available</div>
-              </div>
-              <div>
-                <div className="font-serif text-3xl font-bold text-primary">50k+</div>
-                <div className="text-sm text-muted-foreground">Happy Readers</div>
-              </div>
-              <div>
-                <div className="font-serif text-3xl font-bold text-primary">500+</div>
-                <div className="text-sm text-muted-foreground">Authors</div>
-              </div>
-            </div>
+            </motion.div>
           </div>
+        </div>
+      </section>
 
-          {/* Image Placeholder */}
-          <div className="relative hidden lg:block">
-            <div className="relative aspect-square overflow-hidden rounded-2xl bg-gradient-to-br from-primary to-secondary shadow-elevated">
-              <div className="flex h-full items-center justify-center">
-                <BookOpen className="h-48 w-48 text-white/20" />
-              </div>
-              {/* Decorative elements */}
-              <div className="absolute -right-4 -top-4 h-24 w-24 rounded-full bg-accent/20 blur-2xl" />
-              <div className="absolute -bottom-4 -left-4 h-32 w-32 rounded-full bg-secondary/20 blur-2xl" />
+      {/* Features */}
+      <section className="border-b bg-secondary/50">
+        <div className="page-container py-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {features.map((feature, index) => (
+              <motion.div
+                key={feature.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                className="flex items-center gap-3"
+              >
+                <div className="shrink-0 w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
+                  <feature.icon className="h-5 w-5 text-accent" />
+                </div>
+                <div>
+                  <h3 className="font-medium text-sm">{feature.title}</h3>
+                  <p className="text-xs text-muted-foreground">{feature.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Categories */}
+      <section className="section-padding">
+        <div className="page-container">
+          <div className="flex items-end justify-between mb-8">
+            <div>
+              <h2 className="font-display text-3xl font-bold mb-2">Shop by Category</h2>
+              <p className="text-muted-foreground">
+                Find exactly what you&apos;re looking for
+              </p>
+            </div>
+            <Button variant="ghost" asChild className="hidden sm:inline-flex">
+              <Link href="/products">
+                View All <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            {categories.slice(0, 6).map((category, index) => (
+              <CategoryCard key={category.id} category={category} index={index} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Products */}
+      <section className="section-padding bg-secondary/30">
+        <div className="page-container">
+          <div className="flex items-end justify-between mb-8">
+            <div>
+              <h2 className="font-display text-3xl font-bold mb-2">Featured Products</h2>
+              <p className="text-muted-foreground">
+                Hand-picked selections for you
+              </p>
+            </div>
+            <Button variant="ghost" asChild className="hidden sm:inline-flex">
+              <Link href="/products">
+                View All <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {featuredProducts.map((product, index) => (
+              <ProductCard key={product.id} product={product} index={index} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Bestsellers */}
+      <section className="section-padding">
+        <div className="page-container">
+          <div className="flex items-end justify-between mb-8">
+            <div>
+              <h2 className="font-display text-3xl font-bold mb-2">Bestsellers</h2>
+              <p className="text-muted-foreground">
+                Our most loved products
+              </p>
+            </div>
+            <Button variant="ghost" asChild className="hidden sm:inline-flex">
+              <Link href="/products">
+                View All <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {bestsellers.map((product, index) => (
+              <ProductCard key={product.id} product={product} index={index} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter */}
+      <section className="bg-accent text-accent-foreground">
+        <div className="page-container section-padding">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="font-display text-3xl font-bold mb-4">
+              Stay in the Loop
+            </h2>
+            <p className="text-accent-foreground/80 mb-6">
+              Subscribe to our newsletter for exclusive offers, new arrivals, 
+              and reading recommendations.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="flex-1 px-4 py-3 rounded-lg bg-accent-foreground/10 border border-accent-foreground/20 text-accent-foreground placeholder:text-accent-foreground/50 focus:outline-none focus:ring-2 focus:ring-accent-foreground/30"
+              />
+              <Button variant="secondary" size="lg">
+                Subscribe
+              </Button>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </CustomerLayout>
   );
 }
