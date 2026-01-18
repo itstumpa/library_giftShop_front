@@ -61,11 +61,9 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8">
           {/* Brand Section - Larger on desktop */}
           <div className="lg:col-span-4">
-            <Link href="/" className="group inline-flex items-center space-x-3">
-              <div className="">
+            <div className="group inline-flex items-center space-x-3">            
                 <Logo variant="white" />
-              </div>
-            </Link>
+            </div>
 
             <p className="mt-6 text-slate-400 leading-relaxed max-w-sm">
               Your trusted destination for quality books and premium stationery.
@@ -97,14 +95,14 @@ export function Footer() {
                 { icon: Instagram, href: "#", label: "Instagram" },
                 { icon: Linkedin, href: "#", label: "LinkedIn" },
               ].map((social, i) => (
-                <a
+                <Link
                   key={i}
                   href={social.href}
                   aria-label={social.label}
                   className="group relative flex h-10 w-10 items-center justify-center rounded-lg bg-slate-800 text-slate-400 transition-all hover:bg-linear-to-br hover:from-blue-500 hover:to-purple-600 hover:text-white"
                 >
                   <social.icon className="h-5 w-5" />
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -117,13 +115,13 @@ export function Footer() {
               <ul className="space-y-3">
                 {footerLinks.shop.map((link) => (
                   <li key={link.name}>
-                    <a
+                    <Link
                       href={link.href}
                       className="group inline-flex items-center text-sm text-slate-400 transition-colors hover:text-white"
                     >
                       <span className="h-px w-0 bg-linear-to-r from-blue-500 to-purple-500 transition-all group-hover:w-4 group-hover:mr-2"></span>
                       {link.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -135,13 +133,13 @@ export function Footer() {
               <ul className="space-y-3">
                 {footerLinks.company.map((link) => (
                   <li key={link.name}>
-                    <a
+                    <Link
                       href={link.href}
                       className="group inline-flex items-center text-sm text-slate-400 transition-colors hover:text-white"
                     >
                       <span className="h-px w-0 bg-linear-to-r from-blue-500 to-purple-500 transition-all group-hover:w-4 group-hover:mr-2"></span>
                       {link.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -153,13 +151,13 @@ export function Footer() {
               <ul className="space-y-3">
                 {footerLinks.support.map((link) => (
                   <li key={link.name}>
-                    <a
+                    <Link
                       href={link.href}
                       className="group inline-flex items-center text-sm text-slate-400 transition-colors hover:text-white"
                     >
                       <span className="h-px w-0 bg-linear-to-r from-blue-500 to-purple-500 transition-all group-hover:w-4 group-hover:mr-2"></span>
                       {link.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -171,21 +169,21 @@ export function Footer() {
               <ul className="space-y-3">
                 <li className="flex items-start gap-3 text-sm text-slate-400">
                   <Mail className="h-5 w-5 shrink-0 text-blue-400" />
-                  <a
+                  <Link
                     href={`mailto:${CONTACT_EMAIL}`}
                     className="hover:text-white transition-colors"
                   >
                     {CONTACT_EMAIL}
-                  </a>
+                  </Link>
                 </li>
                 <li className="flex items-start gap-3 text-sm text-slate-400">
                   <Phone className="h-5 w-5 shrink-0 text-purple-400" />
-                  <a
+                  <Link
                     href={`tel:${CONTACT_PHONE}`}
                     className="hover:text-white transition-colors"
                   >
                     {CONTACT_PHONE}
-                  </a>
+                  </Link>
                 </li>
                 <li className="flex items-start gap-3 text-sm text-slate-400">
                   <MapPin className="h-5 w-5 shrink-0 text-pink-400" />
@@ -213,13 +211,13 @@ export function Footer() {
             {/* Legal Links */}
             <div className="flex flex-wrap items-center justify-center gap-6">
               {footerLinks.legal.map((link) => (
-                <a
+                <Link
                   key={link.name}
                   href={link.href}
                   className="text-sm text-slate-400 transition-colors hover:text-white"
                 >
                   {link.name}
-                </a>
+                </Link>
               ))}
             </div>
           </div>

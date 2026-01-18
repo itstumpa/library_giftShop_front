@@ -1,15 +1,14 @@
 'use client'
 
 import { useState } from 'react';
-// import { useLocation } from 'next/router';
-// import { Link, useLocation } from 'react-router';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ShoppingCart, Menu, X, Search } from 'lucide-react';
 import { Logo } from '@/components/shared/Logo';
 import { useCartStore } from '@/store/cart-store';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import  Link  from 'next/link';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -23,7 +22,7 @@ const navLinks = [
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { openCart, getTotalItems } = useCartStore();
-  // const location = useLocation();
+  const pathname = usePathname();
   const totalItems = getTotalItems();
 
   return (
@@ -56,7 +55,7 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 className={`text-sm font-medium transition-colors hover:text-accent ${
-                  location.pathname === link.href
+                  pathname === link.href // ← FIXED: changed from location.usePathname
                     ? 'text-foreground'
                     : 'text-muted-foreground'
                 }`}
@@ -136,7 +135,7 @@ export function Header() {
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
                     className={`py-2 text-sm font-medium transition-colors hover:text-accent ${
-                      location.pathname === link.href
+                      pathname === link.href // ← FIXED: changed from location.usePathname
                         ? 'text-foreground'
                         : 'text-muted-foreground'
                     }`}
