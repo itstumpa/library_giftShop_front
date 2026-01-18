@@ -29,9 +29,9 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 w-full bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/80 border-b">
        {/* Top Bar */}
-      <div className="bg-primary text-primary-foreground">
+      <div className=" text-primary-foreground bg-[#193366]">
         <div className="container mx-auto px-4">
-          <div className="flex h-10 items-center justify-between text-sm">
+          <div className="flex h-10 items-center justify-between text-sm ">
             <p>Free shipping on orders over $50</p>
             <div className="flex items-center gap-4">
               <Link href="/contact" className="hover:underline">

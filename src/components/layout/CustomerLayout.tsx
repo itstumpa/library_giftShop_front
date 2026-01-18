@@ -1,6 +1,6 @@
-import { Header } from './Header';
-import { Footer } from './Footer';
-import { CartDrawer } from '@/components/shared/CartDrawer';
+import { CartDrawer } from "@/components/shared/CartDrawer";
+import { Footer } from "../../app/layout/Footer";
+import { Header } from "../../app/layout/Header";
 
 interface CustomerLayoutProps {
   children: React.ReactNode;
