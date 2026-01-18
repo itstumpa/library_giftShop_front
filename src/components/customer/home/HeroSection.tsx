@@ -85,7 +85,7 @@ export default function HeroSection() {
 
       {/* Features */}
       <section className="border-b bg-secondary/50">
-        <div className="page-container py-8">
+        <div className="page-container py-8 max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {features.map((feature, index) => (
               <motion.div
@@ -110,7 +110,7 @@ export default function HeroSection() {
 
       {/* Categories */}
       <section className="section-padding">
-        <div className="page-container">
+        <div className="page-container max-w-7xl mx-auto py-20">
           <div className="flex items-end justify-between mb-8">
             <div>
               <h2 className="font-display text-3xl font-bold mb-2">Shop by Category</h2>
@@ -134,7 +134,7 @@ export default function HeroSection() {
 
       {/* Featured Products */}
       <section className="section-padding bg-secondary/30">
-        <div className="page-container">
+        <div className="page-container max-w-7xl mx-auto py-10">
           <div className="flex items-end justify-between mb-8">
             <div>
               <h2 className="font-display text-3xl font-bold mb-2">Featured Products</h2>
@@ -158,7 +158,7 @@ export default function HeroSection() {
 
       {/* Bestsellers */}
       <section className="section-padding">
-        <div className="page-container">
+        <div className="page-container max-w-7xl mx-auto py-20">
           <div className="flex items-end justify-between mb-8">
             <div>
               <h2 className="font-display text-3xl font-bold mb-2">Bestsellers</h2>
@@ -180,30 +180,7 @@ export default function HeroSection() {
         </div>
       </section>
 
-      {/* Newsletter */}
-      <section className="bg-accent text-accent-foreground">
-        <div className="page-container section-padding">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="font-display text-3xl font-bold mb-4">
-              Stay in the Loop
-            </h2>
-            <p className="text-accent-foreground/80 mb-6">
-              Subscribe to our newsletter for exclusive offers, new arrivals, 
-              and reading recommendations.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-lg bg-accent-foreground/10 border border-accent-foreground/20 text-accent-foreground placeholder:text-accent-foreground/50 focus:outline-none focus:ring-2 focus:ring-accent-foreground/30"
-              />
-              <Button variant="secondary" size="lg">
-                Subscribe
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+     
     </CustomerLayout>
   );
 }

@@ -115,8 +115,18 @@ h1, h2, h3, h4, h5, h6 {
     --secondary: 351 49% 36%; /* Warm Burgundy #8b2e3f */
     --secondary-foreground: 0 0% 100%;
 
-    --accent: 31 43% 65%; /* Warm Gold #d4a574 */
-    --accent-foreground: 214 56% 25%;
+
+       /* Forest Green Accent */
+    --accent: 150 35% 30%;
+    --accent-foreground: 40 33% 98%;
+
+      /* Success Green */
+    --success: 150 50% 35%;
+    --success-foreground: 40 33% 98%;
+
+       /* Warning Amber */
+    --warning: 35 90% 50%;
+    --warning-foreground: 220 25% 15%;
 
     --muted: 200 18% 72%; /* Soft Gray #b2bec3 */
     --muted-foreground: 210 7% 40%;
@@ -159,6 +169,12 @@ h1, h2, h3, h4, h5, h6 {
     --border: 214 56% 20%;
     --input: 214 56% 20%;
     --ring: 214 56% 25%;
+
+    /* Custom gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(220 60% 25%), hsl(220 50% 35%));
+    --gradient-accent: linear-gradient(135deg, hsl(150 35% 30%), hsl(150 40% 40%));
+    --gradient-warm: linear-gradient(180deg, hsl(40 33% 98%), hsl(35 30% 93%));
+
   }
 }
 
