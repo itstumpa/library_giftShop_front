@@ -1,3 +1,4 @@
+"use client"
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Minus, Plus, ShoppingBag, Trash2 } from 'lucide-react';
 import { useCartStore } from '@/store/cart-store';
@@ -65,11 +66,10 @@ export function CartDrawer() {
                   <div className="p-6 space-y-4">
                     {items.map((item) => (
                       <div key={item.productId} className="flex gap-4">
-                        <div className="w-20 h-24 rounded-md overflow-hidden bg-secondary flex-shrink-0">
+                        <div className="w-20 h-24 rounded-md overflow-hidden bg-secondary shrink-0">
                           <Image
                             src={item.product.image}
-                            width={400}
-  height={400}
+                            // width={400}
                             alt={item.product.name}
                             className="w-full h-full object-cover"
                           />

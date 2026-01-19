@@ -1,24 +1,24 @@
-'use client'
+"use client";
 
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ShoppingCart, Menu, X, Search } from 'lucide-react';
-import { Logo } from '@/components/shared/Logo';
-import { useCartStore } from '@/store/cart-store';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { Logo } from "@/app/(customer)/shared/Logo";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { useCartStore } from "@/store/cart-store";
+import { AnimatePresence, motion } from "framer-motion";
+import { Menu, Search, ShoppingCart, X } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/products', label: 'Shop' },
-  { href: '/products?category=fiction', label: 'Books' },
-  { href: '/products?category=notebooks-journals', label: 'Stationery' },
-  { href: '/products?new-arrival', label: 'New Arrival' },
-  { href: '/products?sale', label: 'Sale' },
+  { href: "/", label: "Home" },
+  { href: "/products", label: "Shop" },
+  { href: "/products?category=fiction", label: "Books" },
+  { href: "/products?category=notebooks-journals", label: "Stationery" },
+  { href: "/products?new-arrival", label: "New Arrival" },
+  { href: "/products?sale", label: "Sale" },
 ];
- 
+
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { openCart, getTotalItems } = useCartStore();
@@ -27,7 +27,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 w-full bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/80 border-b">
-       {/* Top Bar */}
+      {/* Top Bar */}
       <div className=" text-primary-foreground bg-[#193366]">
         <div className="container mx-auto px-4">
           <div className="flex h-10 items-center justify-between text-sm ">
@@ -56,8 +56,8 @@ export function Header() {
                 href={link.href}
                 className={`text-sm font-medium transition-colors hover:text-accent ${
                   pathname === link.href // ← FIXED: changed from location.usePathname
-                    ? 'text-foreground'
-                    : 'text-muted-foreground'
+                    ? "text-foreground"
+                    : "text-muted-foreground"
                 }`}
               >
                 {link.label}
@@ -94,7 +94,12 @@ export function Header() {
             </Button>
 
             {/* Admin Link */}
-            <Button variant="outline" size="sm" asChild className="hidden sm:inline-flex">
+            <Button
+              variant="outline"
+              size="sm"
+              asChild
+              className="hidden sm:inline-flex"
+            >
               <Link href="/admin">Dashboard</Link>
             </Button>
 
@@ -105,7 +110,11 @@ export function Header() {
               className="md:hidden"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
-              {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {isMobileMenuOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
             </Button>
           </div>
         </div>
@@ -116,7 +125,7 @@ export function Header() {
         {isMobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden border-t bg-background"
           >
@@ -136,8 +145,8 @@ export function Header() {
                     onClick={() => setIsMobileMenuOpen(false)}
                     className={`py-2 text-sm font-medium transition-colors hover:text-accent ${
                       pathname === link.href // ← FIXED: changed from location.usePathname
-                        ? 'text-foreground'
-                        : 'text-muted-foreground'
+                        ? "text-foreground"
+                        : "text-muted-foreground"
                     }`}
                   >
                     {link.label}

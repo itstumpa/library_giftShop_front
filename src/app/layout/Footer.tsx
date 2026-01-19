@@ -10,7 +10,7 @@ import {
   Twitter,
 } from "lucide-react";
 import Link from "next/link";
-import { Logo } from "../../components/shared/Logo";
+import { Logo } from "../(customer)/shared/Logo";
 
 const APP_NAME = "Library";
 const CONTACT_EMAIL = "hello@library.com";
@@ -61,8 +61,8 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8">
           {/* Brand Section - Larger on desktop */}
           <div className="lg:col-span-4">
-            <div className="group inline-flex items-center space-x-3">            
-                <Logo variant="white" />
+            <div className="group inline-flex items-center space-x-3">
+              <Logo variant="white" />
             </div>
 
             <p className="mt-6 text-slate-400 leading-relaxed max-w-sm">

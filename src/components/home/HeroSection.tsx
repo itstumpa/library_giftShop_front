@@ -1,34 +1,34 @@
 // import { Link } from 'react-router-dom';
 
-import { motion } from 'framer-motion';
-import { ArrowRight, BookOpen, Pencil, Truck, Shield } from 'lucide-react';
-import { CustomerLayout } from '@/components/layout/CustomerLayout';
-import { ProductCard } from '@/components/shared/ProductCard';
-import { CategoryCard } from '@/components/shared/CategoryCard';
-import { Button } from '@/components/ui/button';
-import { useProductStore } from '@/store/product-store';
-import Link from 'next/link';
+import { CategoryCard } from "@/app/(customer)/shared/CategoryCard";
+import { ProductCard } from "@/app/(customer)/shared/ProductCard";
+import { CustomerLayout } from "@/components/layout/CustomerLayout";
+import { Button } from "@/components/ui/button";
+import { useProductStore } from "@/store/product-store";
+import { motion } from "framer-motion";
+import { ArrowRight, BookOpen, Pencil, Shield, Truck } from "lucide-react";
+import Link from "next/link";
 
 const features = [
   {
     icon: Truck,
-    title: 'Free Shipping',
-    description: 'On orders over $50',
+    title: "Free Shipping",
+    description: "On orders over $50",
   },
   {
     icon: Shield,
-    title: 'Secure Payment',
-    description: '100% protected transactions',
+    title: "Secure Payment",
+    description: "100% protected transactions",
   },
   {
     icon: BookOpen,
-    title: 'Quality Selection',
-    description: 'Curated collection of books',
+    title: "Quality Selection",
+    description: "Curated collection of books",
   },
   {
     icon: Pencil,
-    title: 'Premium Stationery',
-    description: 'Finest writing instruments',
+    title: "Premium Stationery",
+    description: "Finest writing instruments",
   },
 ];
 
@@ -50,8 +50,7 @@ export default function HeroSection() {
               transition={{ duration: 0.6 }}
               className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6"
             >
-              Discover Stories That{' '}
-              <span className="text-accent">Inspire</span>
+              Discover Stories That <span className="text-accent">Inspire</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -59,9 +58,9 @@ export default function HeroSection() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-lg md:text-xl text-primary-foreground/80 mb-8 leading-relaxed"
             >
-              Explore our curated collection of books and premium stationery. 
-              From bestselling novels to artisan journals, find everything you need 
-              to feed your imagination.
+              Explore our curated collection of books and premium stationery.
+              From bestselling novels to artisan journals, find everything you
+              need to feed your imagination.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -75,7 +74,12 @@ export default function HeroSection() {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="bg-primary-foreground/10 text-primary-foreground hover:bg-primary-foreground/20" asChild>
+              <Button
+                size="lg"
+                variant="outline"
+                className="bg-primary-foreground/10 text-primary-foreground hover:bg-primary-foreground/20"
+                asChild
+              >
                 <Link href="/products?category=fiction">Browse Books</Link>
               </Button>
             </motion.div>
@@ -100,7 +104,9 @@ export default function HeroSection() {
                 </div>
                 <div>
                   <h3 className="font-medium text-sm">{feature.title}</h3>
-                  <p className="text-xs text-muted-foreground">{feature.description}</p>
+                  <p className="text-xs text-muted-foreground">
+                    {feature.description}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -113,7 +119,9 @@ export default function HeroSection() {
         <div className="page-container max-w-7xl mx-auto py-20">
           <div className="flex items-end justify-between mb-8">
             <div>
-              <h2 className="font-display text-3xl font-bold mb-2">Shop by Category</h2>
+              <h2 className="font-display text-3xl font-bold mb-2">
+                Shop by Category
+              </h2>
               <p className="text-muted-foreground">
                 Find exactly what you&apos;re looking for
               </p>
@@ -126,7 +134,11 @@ export default function HeroSection() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {categories.slice(0, 6).map((category, index) => (
-              <CategoryCard key={category.id} category={category} index={index} />
+              <CategoryCard
+                key={category.id}
+                category={category}
+                index={index}
+              />
             ))}
           </div>
         </div>
@@ -137,7 +149,9 @@ export default function HeroSection() {
         <div className="page-container max-w-7xl mx-auto py-10">
           <div className="flex items-end justify-between mb-8">
             <div>
-              <h2 className="font-display text-3xl font-bold mb-2">Featured Products</h2>
+              <h2 className="font-display text-3xl font-bold mb-2">
+                Featured Products
+              </h2>
               <p className="text-muted-foreground">
                 Hand-picked selections for you
               </p>
@@ -161,10 +175,10 @@ export default function HeroSection() {
         <div className="page-container max-w-7xl mx-auto py-20">
           <div className="flex items-end justify-between mb-8">
             <div>
-              <h2 className="font-display text-3xl font-bold mb-2">Bestsellers</h2>
-              <p className="text-muted-foreground">
-                Our most loved products
-              </p>
+              <h2 className="font-display text-3xl font-bold mb-2">
+                Bestsellers
+              </h2>
+              <p className="text-muted-foreground">Our most loved products</p>
             </div>
             <Button variant="ghost" asChild className="hidden sm:inline-flex">
               <Link href="/products">
@@ -179,8 +193,6 @@ export default function HeroSection() {
           </div>
         </div>
       </section>
-
-     
     </CustomerLayout>
   );
 }

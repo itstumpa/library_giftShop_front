@@ -1,4 +1,4 @@
-import { CartDrawer } from "@/components/shared/CartDrawer";
+import { CartDrawer } from "@/app/(customer)/shared/CartDrawer";
 import { Footer } from "../../app/layout/Footer";
 import { Header } from "../../app/layout/Header";
 

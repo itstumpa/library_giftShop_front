@@ -15,7 +15,7 @@ export function CTASection() {
   };
 
   return (
-    <section className="relative overflow-hidden py-20">
+    <section className="relative overflow-hidden pt-20 pb-10">
       {/* Animated gradient background */}
       <div className="absolute inset-0 bg-[#193366]">
         <div className="absolute inset-0 opacity-30">
@@ -99,37 +99,7 @@ export function CTASection() {
               <p className="mt-4 text-sm text-white/70">
                 🔒 No spam, ever. Unsubscribe with one click.
               </p>
-            </div>
-
-            {/* Features */}
-            <div className="mb-12 grid gap-4 text-left sm:grid-cols-3">
-              {[
-                { icon: '📚', title: 'Weekly Picks', desc: 'Curated book recommendations' },
-                { icon: '🎁', title: 'Exclusive Deals', desc: 'Up to 40% off for subscribers' },
-                { icon: '⚡', title: 'Early Access', desc: 'First to know about new arrivals' },
-              ].map((feature, i) => (
-                <div
-                  key={i}
-                  className="group rounded-xl bg-white/10 p-4 backdrop-blur-md ring-1 ring-white/20 transition-all hover:bg-white/20 hover:scale-105"
-                >
-                  <div className="mb-2 text-3xl">{feature.icon}</div>
-                  <h3 className="mb-1 font-semibold text-white">{feature.title}</h3>
-                  <p className="text-sm text-white/70">{feature.desc}</p>
-                </div>
-              ))}
-            </div>
-
-            {/* Secondary CTA */}
-            <div className="flex flex-col items-center gap-4 border-t border-white/20 pt-8 sm:flex-row sm:justify-center">
-              <p className="text-lg text-white/90">Ready to start shopping?</p>
-              <a
-                href="/products"
-                className="group inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-blue-700 shadow-xl transition-all hover:scale-105 hover:shadow-2xl"
-              >
-                Browse All Products
-                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </a>
-            </div>
+            </div>                
           </div>
         </div>
       </div>

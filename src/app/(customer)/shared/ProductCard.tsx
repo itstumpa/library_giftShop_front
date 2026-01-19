@@ -1,13 +1,15 @@
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Product } from "@/data/types";
-import { useCartStore } from "@/store/cart-store";
-import { useProductStore } from "@/store/product-store";
-import { motion } from "framer-motion";
-import { Plus, Star } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-// import { Link } from "react-router-dom";
+"use client"
+
+import { motion } from 'framer-motion';
+import { Plus, Star } from 'lucide-react';
+import { Product } from '@/data/types';
+import { useCartStore } from '@/store/cart-store';
+import { useProductStore } from '@/store/product-store';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+
+import Link from 'next/link';
+import Image from 'next/image';
 
 interface ProductCardProps {
   product: Product;
@@ -26,9 +28,7 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
   };
 
   const discount = product.originalPrice
-    ? Math.round(
-        ((product.originalPrice - product.price) / product.originalPrice) * 100,
-      )
+    ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
     : 0;
 
   return (
@@ -48,7 +48,7 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
             fill
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
-
+          
           {/* Badges */}
           <div className="absolute top-3 left-3 flex flex-col gap-2">
             {product.bestseller && (
@@ -57,7 +57,11 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
                 Bestseller
               </Badge>
             )}
-            {discount > 0 && <Badge variant="destructive">-{discount}%</Badge>}
+            {discount > 0 && (
+              <Badge variant="destructive">
+                -{discount}%
+              </Badge>
+            )}
           </div>
 
           {/* Quick Add Button */}
@@ -107,3 +111,4 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
     </motion.div>
   );
 }
+
