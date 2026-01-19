@@ -167,7 +167,7 @@ const testimonials = [
               transition={{ duration: 0.6 }}
               className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6"
             >
-              Discover Stories That <span className="text-accent">Inspire</span>
+              Discover Stories That <span className="text-accent-foreground!">Inspire</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
