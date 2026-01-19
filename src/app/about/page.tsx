@@ -42,9 +42,9 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-200">
+    <div className="min-h-screen bg-linear-to-br from-slate-50 to-slate-200">
       {/* Header */}
-      <header className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-12 px-8 text-center shadow-lg">
+      <header className="bg-linear-to-r from-blue-900 to-blue-700 text-white py-12 px-8 text-center shadow-lg">
         <h1 className="text-4xl md:text-5xl font-semibold mb-2">📚 Community Library</h1>
         <p className="text-lg md:text-xl opacity-95">Your Gateway to Knowledge and Discovery</p>
       </header>
@@ -59,7 +59,7 @@ export default function AboutPage() {
             For over 50 years, our library has been the heart of our community, providing access to information, fostering literacy, and creating spaces for learning and connection. We believe that libraries are more than repositories of books—they are vibrant community centers where curiosity thrives and knowledge is shared freely.
           </p>
           <p className="text-lg text-gray-700">
-            Whether you&apos;re seeking your next great read, researching a topic, or looking for a quiet place to study, our doors are open to everyone. We're committed to promoting literacy, supporting lifelong learning, and ensuring that all members of our community have equal access to information and resources.
+            Whether you&apos;re seeking your next great read, researching a topic, or looking for a quiet place to study, our doors are open to everyone. We&apos;re committed to promoting literacy, supporting lifelong learning, and ensuring that all members of our community have equal access to information and resources.
           </p>
         </section>
 
@@ -80,7 +80,7 @@ export default function AboutPage() {
         </section>
 
         {/* Stats Section */}
-        <section className="bg-gradient-to-r from-purple-600 to-purple-800 text-white rounded-xl p-8 md:p-12 mb-12 text-center shadow-xl">
+        <section className="bg-linear-to-r from-purple-600 to-purple-800 text-white rounded-xl p-8 md:p-12 mb-12 text-center shadow-xl">
           <h2 className="text-3xl md:text-4xl font-bold mb-8">Our Impact by the Numbers</h2>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => (

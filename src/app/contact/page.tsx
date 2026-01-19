@@ -35,9 +35,9 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50/30">
+    <div className="min-h-screen bg-linear-to-br from-slate-50 to-blue-50/30">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-blue-600 to-indigo-700 py-20">
+      <section className="relative overflow-hidden bg-linear-to-br from-blue-600 to-indigo-700 py-20">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute -left-40 top-0 h-96 w-96 animate-pulse rounded-full bg-white blur-3xl"></div>
           <div className="absolute -right-40 bottom-0 h-96 w-96 animate-pulse rounded-full bg-white blur-3xl" style={{ animationDelay: '1s' }}></div>
@@ -49,7 +49,7 @@ export default function ContactPage() {
             Get in Touch
           </div>
           <h1 className="mb-6 font-serif text-4xl font-bold text-white md:text-5xl lg:text-6xl">
-            We'd Love to Hear From You
+            We&apos;d Love to Hear From You
           </h1>
           <p className="mx-auto max-w-2xl text-lg text-white/90 md:text-xl">
             Have a question about our products? Need help with an order? Our team is here to assist you.
@@ -87,13 +87,13 @@ export default function ContactPage() {
               key={i}
               className="group relative overflow-hidden rounded-2xl bg-white p-8 shadow-lg ring-1 ring-slate-200 transition-all hover:-translate-y-1 hover:shadow-xl"
             >
-              <div className={`mb-4 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br ${item.color} shadow-lg`}>
+              <div className={`mb-4 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-linear-to-br ${item.color} shadow-lg`}>
                 <item.icon className="h-7 w-7 text-white" />
               </div>
               <h3 className="mb-2 text-xl font-semibold text-slate-900">{item.title}</h3>
               <p className="mb-1 text-lg font-medium text-slate-700">{item.content}</p>
               <p className="text-sm text-slate-500">{item.subtext}</p>
-              <div className="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r opacity-0 transition-opacity group-hover:opacity-100" style={{ backgroundImage: `linear-gradient(to right, ${item.color.split(' ')[1]}, ${item.color.split(' ')[2]})` }}></div>
+              <div className="absolute bottom-0 left-0 h-1 w-full bg-linear-to-r opacity-0 transition-opacity group-hover:opacity-100" style={{ backgroundImage: `linear-gradient(to right, ${item.color.split(' ')[1]}, ${item.color.split(' ')[2]})` }}></div>
             </div>
           ))}
         </div>
@@ -107,7 +107,7 @@ export default function ContactPage() {
             <div className="rounded-2xl bg-white p-8 shadow-lg ring-1 ring-slate-200 md:p-10">
               <h2 className="mb-2 text-3xl font-bold text-slate-900">Send us a Message</h2>
               <p className="mb-8 text-slate-600">
-                Fill out the form below and we'll get back to you as soon as possible.
+                Fill out the form below and we&apos;ll get back to you as soon as possible.
               </p>
 
               {isSubmitted && (
@@ -189,7 +189,7 @@ export default function ContactPage() {
                 <button
                   onClick={handleSubmit}
                   disabled={isSubmitting}
-                  className="group flex w-full items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 px-8 py-4 font-semibold text-white shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="group flex w-full items-center justify-center gap-2 rounded-lg bg-linear-to-r from-blue-600 to-indigo-600 px-8 py-4 font-semibold text-white shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
                     <>
@@ -232,7 +232,7 @@ export default function ContactPage() {
             </div>
 
             {/* FAQ Link */}
-            <div className="rounded-2xl bg-gradient-to-br from-purple-600 to-indigo-600 p-6 text-white shadow-lg">
+            <div className="rounded-2xl bg-linear-to-br from-purple-600 to-indigo-600 p-6 text-white shadow-lg">
               <div className="mb-4 flex items-center gap-3">
                 <HelpCircle className="h-8 w-8" />
                 <h3 className="text-xl font-semibold">Need Quick Help?</h3>
@@ -251,7 +251,7 @@ export default function ContactPage() {
 
             {/* Map Placeholder */}
             <div className="overflow-hidden rounded-2xl shadow-lg ring-1 ring-slate-200">
-              <div className="h-64 bg-gradient-to-br from-slate-200 to-slate-300">
+              <div className="h-64 bg-linear-to-br from-slate-200 to-slate-300">
                 <div className="flex h-full items-center justify-center text-slate-500">
                   <MapPin className="h-12 w-12" />
                 </div>
